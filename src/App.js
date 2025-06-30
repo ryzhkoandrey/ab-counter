@@ -5,7 +5,11 @@ function App() {
    const [count, setCount] = React.useState(0);
 
    const onClickPlus = () => {
-      setCount((last) => last + 1);
+      setCount(count + 1);
+   };
+
+   const onClickMinus = () => {
+      setCount(count - 1);
    };
 
    return (
@@ -13,7 +17,11 @@ function App() {
          <div>
             <h2>Счетчик:</h2>
             <h1>{count}</h1>
-            <button className="minus">- Минус</button>
+
+            <button onClick={onClickMinus} className="minus">
+               - Минус
+            </button>
+
             <button onClick={onClickPlus} className="plus">
                Плюс +
             </button>
